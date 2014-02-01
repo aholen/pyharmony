@@ -15,7 +15,7 @@ class HarmonyClient(sleekxmpp.ClientXMPP):
     """An XMPP client for connecting to the Logitech Harmony."""
 
     def __init__(self, auth_token):
-        user = '%s@connect.logitech.com/gatorade.' % auth_token
+        user = '%s@x.com' % auth_token
         password = auth_token
         plugin_config = {
             # Enables PLAIN authentication which is off by default.
@@ -76,11 +76,11 @@ class HarmonyClient(sleekxmpp.ClientXMPP):
           A nested dictionary containing activities, devices, etc.
         """
         iq_cmd = self.Iq()
-        iq_cmd['type'] = 'get'
+        iq_cmd['type'] = 'startActivity'
         action_cmd = ET.Element('oa')
         action_cmd.attrib['xmlns'] = 'connect.logitech.com'
-        action_cmd.attrib['mime'] = ('harmony.engine?startactivity')
-        cmd = 'activityId=' + str(activity_id) + ':timestamp=0'
+        action_cmd.attrib['mime'] = ('vnd.logitech.harmony/vnd.logitech.harmony.engine?startActivity')
+        cmd = 'activityId=' + str(activity_id)
         action_cmd.text = cmd
         iq_cmd.set_payload(action_cmd)
         result = iq_cmd.send(block=True)

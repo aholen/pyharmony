@@ -67,7 +67,7 @@ class SwapAuthToken(sleekxmpp.ClientXMPP):
             'feature_mechanisms': {'unencrypted_plain': True},
         }
         super(SwapAuthToken, self).__init__(
-            'guest@connect.logitech.com/gatorade.', 'gatorade.', plugin_config=plugin_config)
+            'guest@x.com', 'guest', plugin_config=plugin_config)
 
         self.token = token
         self.uuid = None
