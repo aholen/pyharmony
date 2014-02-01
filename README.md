@@ -3,12 +3,11 @@ pyharmony
 
 Python library for progarmmatically using a Logitech Harmony Link or Ultimate Hub.
 
-A fork of (pyharmony)[https://github.com/petele/pyharmony] with the intent to:
-- Make pip/setup.py installable.
+A fork of (pyharmony)[https://github.com/jterrace/pyharmony] with the intent to:
 - Unify improvments made in other forks.
 - Configurable for Harmony Link/Hub differences.
-- Better practices for project layout.
-- Better error handling!
+- Webinterface
+- Focus on Harmony Link
 
 Original readme follows:
 
